@@ -47,7 +47,7 @@ function App() {
                     <img src={ME} className="App-logo " alt="logo" />
                 </div>
                 <p>Hello Everyone!</p>
-                업데이트 준비중 ~.~<p className="tip">사진을 눌러보세요</p>
+                업데이트 준비중 ~.~ 기대해주세요~ㅎㅎ<p className="tip">사진을 눌러보세요</p>
             </header>
         </div>
     );
