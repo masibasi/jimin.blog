@@ -23,3 +23,6 @@ CMD ["npm", "start"]
 
 # 그리고 Dockerfile로 docker 이미지를 빌드해야한다.
 # $ docker build .
+
+# 이미지 빌드 및 컨테이너 마운트시 -f 옵션으로 configuration file을 지정하면 된다.
+# $ docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d --build
