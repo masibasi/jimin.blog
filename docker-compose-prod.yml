@@ -8,6 +8,6 @@ services:
       args:
         - REACT_APP_NAME=JiminBlog-prod
         - REACT_APP_TITLE=JiminBlog-prod
-      ports:
-        - "8080:80"
-        # 80: HTTP Port for NGINX Web Server
+    ports:
+      - "8080:80"
+      # 80: HTTP Port for NGINX Web Server
