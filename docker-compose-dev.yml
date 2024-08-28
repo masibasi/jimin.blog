@@ -8,5 +8,7 @@ services:
       - "3000:3000"
     volumes:
       - ./src:/app/src:ro
+    container_name: jimin-blog-dev
+    stdin_open: true
     env_file:
       - ./.env.local
