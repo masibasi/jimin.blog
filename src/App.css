@@ -1,49 +1,60 @@
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 .App-logo {
-    border-radius: 2px;
-    animation: App-logo-spin infinite 25s linear;
-    margin-bottom: 100px;
+  border-radius: 2px;
+  animation: App-logo-spin infinite 25s linear;
+  margin-bottom: 100px;
 }
 
 .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-link {
-    color: #61dafb;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .ImgWrapper {
-    cursor: pointer;
+  cursor: pointer;
 }
 .Title {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .tip {
-    font-size: 0.7em;
+  font-size: 0.7em;
+}
+
+.ban-drag {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -moz-user-drag: none;
+  -ms-user-select: none;
+  user-drag: none;
+  user-select: none;
 }
