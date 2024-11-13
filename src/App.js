@@ -1,62 +1,29 @@
-import ME from "./me.png";
 import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
 import "./hover.css";
-import { Firework } from "./Firework";
-import confetti from "canvas-confetti";
-import { Link, useNavigate } from "react-router-dom";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import Resume from "./pages/Resume";
+import ApiTestPage from "./pages/api-test-page";
+import ErrorPage from "./pages/error-page";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const navigate = useNavigate();
-
-  const fire = () => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-    });
-    var end = Date.now() + 1 * 1000;
-
-    var colors = ["#bb0000", "#ffffff"];
-
-    (function frame() {
-      confetti({
-        particleCount: 2,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: colors,
-      });
-      confetti({
-        particleCount: 2,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: colors,
-      });
-
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
-  };
-
   return (
-    <div className="App">
-      <header className="App-header ">
-        <Firework />
-        <h1 className="Title">지민 홈피에 오신걸 환영합니다!</h1>
-        <div className="ImgWrapper hvr-grow ban-drag" onClick={fire}>
-          <img src={ME} className="App-logo " alt="logo" />
-        </div>
-        <p>Hello Everyone!</p>
-        업데이트 준비중 ~.~ 기대해주세요~ㅎㅎ<p className="tip">사진을 눌러보세요</p>
-        <button>
-          <Link to="/test" title="TEST PAGE">
-            Go to Test Page
-          </Link>
-        </button>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/test" element={<ApiTestPage />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </>
   );
 }
 

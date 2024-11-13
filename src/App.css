@@ -58,3 +58,20 @@
   user-drag: none;
   user-select: none;
 }
+
+/* SocialLinks */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-link {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #0e76a8; /* 예시로 LinkedIn의 색상 */
+}

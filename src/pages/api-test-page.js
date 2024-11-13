@@ -8,7 +8,8 @@ const ApiTestPage = () => {
 
   const axiosTest = async (name) => {
     try {
-      const response = await axios.get(`http://localhost:9090/hello-world/path-variable/${name}`);
+      // const response = await axios.get(`http://localhost:8080/hello-world/path-variable/${name}`);
+      const response = await axios.get(`http://localhost:8080/guest-book`);
       setMessage(response.data.message); // Assuming `message` is the response field
     } catch (err) {
       setError(err.response ? err.response.data.message : err.message);
