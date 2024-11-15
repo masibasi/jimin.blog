@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import socialLinks from "../../constants/socialLinks";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,14 +32,14 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/blog" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <a href={socialLinks.blog} className="nav-link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
               Blog
-            </Link>
+            </a>
           </li>
           <li className="nav-item">
-            <Link to="/resume" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <a href="./src/assets/images/me.png" className="nav-link" download onClick={() => setIsMenuOpen(false)}>
               Resume
-            </Link>
+            </a>
           </li>
           <li className="nav-item">
             <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
