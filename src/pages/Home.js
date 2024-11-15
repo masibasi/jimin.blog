@@ -2,6 +2,7 @@ import React from "react";
 import confetti from "canvas-confetti";
 import HomeHeader from "../components/HomeHeader";
 import SocialLinks from "../components/SocialLinks";
+import ME from "../assets/images/me.png";
 
 const Home = () => {
   const fire = () => {
@@ -40,6 +41,9 @@ const Home = () => {
     <div className="Home">
       <HomeHeader onFire={fire} />
       <SocialLinks />
+      <div className="ImgWrapper hvr-grow ban-drag" onClick={fire}>
+        <img src={ME} className="App-logo" alt="logo" />
+      </div>
     </div>
   );
 };

@@ -1,16 +1,19 @@
-/* src/components/Navbar/Navbar.css */
 .navbar {
-  background: #333;
+  /* background: #333; */
+  background: #99b0ce;
+  /* border-bottom: 1px solid rgb(58, 94, 152); */
   color: #fff;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* 컨테이너 안의 항목들을 양 끝으로 배치 */
   width: 100%;
 }
 
@@ -42,4 +45,41 @@
 .nav-link:hover {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
+}
+
+/* Hamburger button (mobile view) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto; /* 오른쪽으로 이동 */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #99b0ce;
+    padding: 10px 0;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 5px 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
 }

@@ -3,25 +3,21 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
-}
-
-.App-logo {
   border-radius: 2px;
-  animation: App-logo-spin infinite 25s linear;
+  /* animation: App-logo-spin infinite 25s linear; */
   margin-bottom: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Home {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #3a5e98;
 }
 
 .App-link {
@@ -38,8 +34,10 @@
 }
 
 .ImgWrapper {
+  margin-top: 200px;
   cursor: pointer;
 }
+
 .Title {
   margin-bottom: 50px;
 }
@@ -68,10 +66,58 @@
 }
 
 .social-link {
-  color: #fff;
+  color: rgb(58, 94, 152);
   transition: color 0.3s;
 }
 
 .social-link:hover {
-  color: #0e76a8; /* 예시로 LinkedIn의 색상 */
+  color: rgba(58, 94, 152, 0.2); /* 예시로 LinkedIn의 색상 */
+}
+
+/* === Responsive Design for Mobile === */
+@media (max-width: 768px) {
+  .App-logo {
+    height: 40vmin; /* 모바일에서 로고 크기 확대 */
+    margin-bottom: 50px;
+  }
+
+  .Home {
+    font-size: calc(8px + 2vmin); /* 글자 크기 줄임 */
+    padding: 20px;
+  }
+
+  .ImgWrapper {
+    margin-top: 100px;
+  }
+
+  .Title {
+    margin-bottom: 30px;
+  }
+
+  .tip {
+    font-size: 0.6em;
+  }
+
+  .social-links {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .social-link {
+    font-size: 1.2em; /* 모바일에서 소셜 링크 크기 조정 */
+  }
+}
+
+@media (max-width: 480px) {
+  .App-logo {
+    height: 50vmin; /* 더 작은 화면에서 로고 크기 조정 */
+  }
+
+  .Home {
+    font-size: calc(7px + 2vmin); /* 폰트 크기 추가 조정 */
+  }
+
+  .social-links {
+    margin-top: 10px;
+  }
 }
