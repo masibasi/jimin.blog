@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import NotionTest from "./pages/NotionTest";
 import Resume from "./pages/Resume";
 import ApiTestPage from "./pages/api-test-page";
 import ErrorPage from "./pages/error-page";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/test" element={<ApiTestPage />} />
+        <Route path="/notionTest" element={<NotionTest />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>

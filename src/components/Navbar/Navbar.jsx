@@ -47,7 +47,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/test" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/notionTest" className="nav-link" onClick={() => setIsMenuOpen(false)}>
               API Test
             </Link>
           </li>
