@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchPosts } from "../services/notionApi";
+import { fetchPosts } from "/api/notion";
 
 const NotionTest = () => {
   const [posts, setPosts] = useState([]);
