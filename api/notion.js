@@ -1,9 +1,8 @@
-import axios from "axios";
+import axios from "axios"; // axios 가져오기
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    res.status(405).json({ error: "Method not allowed" });
-    return;
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   const { databaseId } = req.body;
@@ -21,10 +20,9 @@ export default async function handler(req, res) {
       }
     );
 
-    console.log("Notion API Response:", response.data); // 응답 확인
     res.status(200).json(response.data);
   } catch (error) {
-    console.error("Error:", error.message);
+    console.error("Error fetching data from Notion:", error.message);
     res.status(500).json({ error: "Failed to fetch data from Notion" });
   }
 }

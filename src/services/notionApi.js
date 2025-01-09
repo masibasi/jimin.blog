@@ -1,5 +1,6 @@
 export const fetchPosts = async () => {
-  const response = await fetch("./notion", {
+  const response = await fetch("/api/notion", {
+    // 반드시 '/api/notion'으로 수정
     method: "POST",
     headers: {
       "Content-Type": "application/json",
