@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchPosts } from "../services/notionApi";
+import { fetchNotionData } from "../services/notionApi";
 
 const NotionTest = () => {
   const [posts, setPosts] = useState([]);
@@ -7,7 +7,7 @@ const NotionTest = () => {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const data = await fetchPosts();
+        const data = await fetchNotionData();
         console.log("Fetched Posts:", data); // 데이터 확인
         setPosts(data);
       } catch (error) {
@@ -22,10 +22,10 @@ const NotionTest = () => {
     <div>
       {posts.map((post) => (
         <div key={post.id} style={{ marginBottom: "20px" }}>
-          <h2>{post.title}</h2>
+          <h2>{post.properties.Name.title[0].plain_text}</h2>
           <p>{post.content}</p>
-          <p>{post.date}</p>
-          {post.image && <img src={post.image} alt="Post" style={{ width: "100%" }} />}
+          <p>{post.created_time}</p>
+          {post.cover && <img src={post.cover.file.url} alt="Post" style={{ width: "20%" }} />}
         </div>
       ))}
     </div>

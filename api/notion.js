@@ -1,33 +1,23 @@
-const axios = require("axios"); // CommonJS 방식
+const { Client } = require("@notionhq/client");
 
-module.exports = async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+const notion = new Client({ auth: process.env.NOTION_API_KEY });
+
+export default async function handler(req, res) {
+  if (req.method !== "GET") {
+    res.status(405).json({ error: "Method not allowed" });
+    return;
   }
 
-  const { databaseId } = req.body;
-
-  if (!process.env.NOTION_API_KEY) {
-    console.error("NOTION_API_KEY is missing");
-    return res.status(500).json({ error: "NOTION_API_KEY is not set" });
-  }
+  const databaseId = process.env.NOTION_DATABASE_ID;
 
   try {
-    const response = await axios.post(
-      `https://api.notion.com/v1/databases/${databaseId}/query`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
-          "Content-Type": "application/json",
-          "Notion-Version": "2022-06-28",
-        },
-      }
-    );
+    const response = await notion.databases.query({
+      database_id: databaseId,
+    });
 
-    res.status(200).json(response.data);
+    res.status(200).json(response.results);
   } catch (error) {
-    console.error("Error fetching data from Notion:", error.message);
+    console.error("Error fetching data from Notion:", error);
     res.status(500).json({ error: "Failed to fetch data from Notion" });
   }
-};
+}

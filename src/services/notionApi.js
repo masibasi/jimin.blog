@@ -1,3 +1,17 @@
+export const fetchNotionData = async () => {
+  try {
+    const response = await fetch("/api/notion");
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error;
+  }
+};
+
 export const fetchPosts = async () => {
   const response = await fetch("/api/notion", {
     // 반드시 '/api/notion'으로 수정
