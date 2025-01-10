@@ -1,13 +1,7 @@
-import axios from "axios";
+const axios = require("axios");
 
 export default async function handler(req, res) {
-  console.log("Axios version:", require("axios").version); // Axios 버전 출력
-
-  if (!process.env.NOTION_API_KEY) {
-    return res.status(500).json({ error: "NOTION_API_KEY is missing" });
-  }
-
-  res.status(200).json({ message: "Axios is working!" });
+  console.log("Request received:", req.body); // 요청 디버깅
 
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
